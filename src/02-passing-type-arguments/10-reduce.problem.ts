@@ -10,7 +10,9 @@ const array = [
   },
 ];
 
-const obj = array.reduce((accum, item) => {
+type NameAsKey = Record<string, { name: string }>;
+
+const obj = array.reduce<NameAsKey>((accum, item) => {
   accum[item.name] = item;
   return accum;
 }, {});
