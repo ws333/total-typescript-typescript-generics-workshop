@@ -1,5 +1,5 @@
-import { expect, it } from "vitest";
-import { Equal, Expect } from "../helpers/type-utils";
+import { expect, it } from 'vitest';
+import { Equal, Expect } from '../helpers/type-utils';
 
 const returnBothOfWhatIPassIn = <T1, T2>(params: { a: T1; b: T2 }) => {
   return {
@@ -8,14 +8,14 @@ const returnBothOfWhatIPassIn = <T1, T2>(params: { a: T1; b: T2 }) => {
   };
 };
 
-it("Should return an object where a -> first and b -> second", () => {
+it('Should return an object where a -> first and b -> second', () => {
   const result = returnBothOfWhatIPassIn({
-    a: "a",
+    a: 'a',
     b: 1,
   });
 
   expect(result).toEqual({
-    first: "a",
+    first: 'a',
     second: 1,
   });
 

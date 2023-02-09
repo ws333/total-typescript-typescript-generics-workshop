@@ -4,26 +4,24 @@ const acceptsValueOnly = <T>(t: T) => {
   return t;
 };
 
-const result = acceptsValueOnly("a");
+const result = acceptsValueOnly('a');
 //    ^?
 
 const acceptsValueInAnObject = <T>(obj: { input: T }) => {
   return obj.input;
 };
 
-const result2 = acceptsValueInAnObject({ input: "abc" });
+const result2 = acceptsValueInAnObject({ input: 'abc' });
 //    ^?
 
-const result2WithAsConst = acceptsValueInAnObject({ input: "abc" } as const);
+const result2WithAsConst = acceptsValueInAnObject({ input: 'abc' } as const);
 //    ^?
 
-const acceptsValueInAnObjectFieldWithConstraint = <T extends string>(obj: {
-  input: T;
-}) => {
+const acceptsValueInAnObjectFieldWithConstraint = <T extends string>(obj: { input: T }) => {
   return obj.input;
 };
 
-const result3 = acceptsValueInAnObjectFieldWithConstraint({ input: "abc" });
+const result3 = acceptsValueInAnObjectFieldWithConstraint({ input: 'abc' });
 //    ^?
 
 const acceptsValueWithObjectConstraint = <
@@ -36,10 +34,10 @@ const acceptsValueWithObjectConstraint = <
   return obj.input;
 };
 
-const result4 = acceptsValueWithObjectConstraint({ input: "abc" });
+const result4 = acceptsValueWithObjectConstraint({ input: 'abc' });
 
 const result4WithAsConst = acceptsValueWithObjectConstraint({
-  input: "abc",
+  input: 'abc',
 } as const);
 
 export {};

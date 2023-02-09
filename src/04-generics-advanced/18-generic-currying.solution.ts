@@ -1,5 +1,5 @@
-import { expect, it } from "vitest";
-import { Equal, Expect } from "../helpers/type-utils";
+import { expect, it } from 'vitest';
+import { Equal, Expect } from '../helpers/type-utils';
 
 export const curryFunction =
   <T>(t: T) =>
@@ -12,7 +12,7 @@ export const curryFunction =
     };
   };
 
-it("Should return an object which matches the types of each input", () => {
+it('Should return an object which matches the types of each input', () => {
   const result = curryFunction(1)(2)(3);
 
   expect(result).toEqual({
@@ -21,7 +21,5 @@ it("Should return an object which matches the types of each input", () => {
     v: 3,
   });
 
-  type test = [
-    Expect<Equal<typeof result, { t: number; u: number; v: number }>>,
-  ];
+  type test = [Expect<Equal<typeof result, { t: number; u: number; v: number }>>];
 });
